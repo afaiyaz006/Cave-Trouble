@@ -124,3 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 980a7f1b33ab9f04384c6e9da62128e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallSpeed: 0.1
+  crack: {fileID: 7347753875991172680, guid: e951930f85161694ea9b3b48e42d7381, type: 3}
+  rockBrokenSound: {fileID: 0}

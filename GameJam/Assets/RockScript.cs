@@ -5,6 +5,7 @@ using UnityEngine;
 public class RockScript : MonoBehaviour
 {
     public float fallSpeed = 0.1f;
+    public GameObject crack;
   
     void Start()
     {
@@ -25,8 +26,13 @@ public class RockScript : MonoBehaviour
         }
         if (collision.gameObject.name == "player")
         {
+            
             PlayerScript.poundedByRock += 1;
+            HealthSystem.health -= 10;
+            Instantiate(crack, transform.position, transform.rotation);
+           
             Destroy(gameObject);
+            
         }
     }
 }

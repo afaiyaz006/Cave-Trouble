@@ -14,18 +14,23 @@ public class PlayerScript : MonoBehaviour
     private float nextFire = 0.0f;
     public static float playerXpos;
     public static int poundedByRock = 0;
+    public Animator animator;
+    [SerializeField]
+    private AudioSource shootAudio;
     void Start()
     {
-
+        
     }
     void Update()
     {
 
         if (Input.GetKeyDown(KeyCode.B) && Time.time > nextFire)
         {
+
             GameObject bulletObject = Instantiate(scalebullet, bulletSpawn.transform.position, transform.rotation);
             bulletObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(3000f, 0));
             nextFire = Time.time + fireRate;
+            shootAudio.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && !is_jumping)
@@ -43,7 +48,7 @@ public class PlayerScript : MonoBehaviour
         playerXpos = transform.position.x;
         if (poundedByRock == 3)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
     // Update is called once per frame
@@ -52,8 +57,17 @@ public class PlayerScript : MonoBehaviour
 
         if (!is_jumping)
         {
+           
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
+            if (horizontal == 0)
+            {
+                animator.SetBool("is_walking", false);
+            }
+            else
+            {
+                animator.SetBool("is_walking", true);
+            }
             Vector2 playerPos = transform.position;
             playerPos.x += horizontal * playerSpeed * Time.deltaTime;
             transform.position = playerPos;

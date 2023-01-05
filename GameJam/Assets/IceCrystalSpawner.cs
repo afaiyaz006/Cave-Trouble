@@ -5,16 +5,15 @@ using UnityEngine;
 public class IceCrystalSpawner : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject[] iceCrystalsPosition;
     public GameObject iceCrystal;
     public int amount = 5;
     void Start()
     {
         for(int i = 1; i <= amount; i++)
         {
-            float randomXRange = Random.Range(-6.00f, 2.10f);
-
-            float randomYRange = Random.Range(3.18f, 4.50f);
-            Instantiate(iceCrystal, new Vector2(randomXRange, randomYRange), transform.rotation);
+            int randomPos = Random.Range(0,iceCrystalsPosition.Length-1);
+            Instantiate(iceCrystal, iceCrystalsPosition[randomPos].transform.position, transform.rotation);
         }
         
     }

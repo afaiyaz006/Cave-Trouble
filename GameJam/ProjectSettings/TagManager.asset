@@ -51,3 +51,6 @@ TagManager:
   - name: rock
     uniqueID: 3958738739
     locked: 0
+  - name: gun
+    uniqueID: 3615346751
+    locked: 0
