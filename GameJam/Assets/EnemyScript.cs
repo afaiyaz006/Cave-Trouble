@@ -22,7 +22,7 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log("Enemy Speed is: " + enemySpeed);
+        //Debug.Log("Enemy Speed is: " + enemySpeed);
         Vector2 enemyPos = transform.position;
         enemyPos.x -= enemySpeed;
         transform.position = enemyPos;

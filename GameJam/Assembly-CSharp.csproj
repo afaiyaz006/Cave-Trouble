@@ -107,6 +107,9 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\ChangeSceneScript.cs" />
+    <Compile Include="Assets\LifeScript.cs" />
+    <Compile Include="Assets\LifeSpawnerScript.cs" />
+    <Compile Include="Assets\RollingStoneScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

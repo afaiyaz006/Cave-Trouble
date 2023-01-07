@@ -44,6 +44,11 @@ public class BulletScript : MonoBehaviour
             collision.gameObject.transform.localScale += new Vector3(0, 1, 0) * scaleFactor;
             Destroy(gameObject);
         }
+        if (collision.gameObject.tag == "rolling_enemy")
+        {
+            collision.gameObject.transform.position += new Vector3(1, 1, 0) * scaleFactor / 2;
+            collision.gameObject.transform.localScale += new Vector3(1, 1, 0) * scaleFactor;
+        }
 
 
     }

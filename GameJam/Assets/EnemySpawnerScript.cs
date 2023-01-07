@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemySpawnerScript : MonoBehaviour
 {
-    public GameObject enemy;
+    public GameObject[] enemy;
     public float delay = 1.5f;
     private float timer;
     public int rate = 3;
-
+    private bool activate = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +24,20 @@ public class EnemySpawnerScript : MonoBehaviour
             for (int i = 1; i <= rate; i++)
             {
                 
-                Instantiate(enemy, transform.position, transform.rotation);
+                Instantiate(enemy[0], transform.position, transform.rotation);
 
             }
 
             timer -= delay;
+        }
+        if ((ScoreKeeper.score+1)%5==0 && activate==false)
+        {
+            Instantiate(enemy[1], transform.position, transform.rotation);
+            activate = true;
+        }
+        else if ((ScoreKeeper.score + 1) % 5 != 0 && activate==true)
+        {
+            activate = false;
         }
     }
 }

@@ -42,7 +42,7 @@ public class PlayerScript : MonoBehaviour
             float vy = 20.0f * Mathf.Sin((20.0f * Mathf.PI) / 180);
             rigidbody2d.velocity = new Vector2(vx, vy);*/
             Rigidbody2D rigidbody2d = GetComponent<Rigidbody2D>();
-            rigidbody2d.AddForce(new Vector2(0, 300.0f));
+            rigidbody2d.AddForce(new Vector2(100.0f, 300.0f));
         }
         playerXpos = transform.position.x;
         

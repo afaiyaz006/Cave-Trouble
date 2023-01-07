@@ -15,19 +15,37 @@ public class HealthSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Health: " + health);
+        if (health < 0)
+        {
+            SceneManager.LoadScene(3);
+        }
         if (health>=0 && health < 10)
         {
-            Destroy(hearts[0]);
+            hearts[0].SetActive(false);
             SceneManager.LoadScene(3);
         }
         else if (health>=10 && health < 20)
         {
-            Destroy(hearts[1]);
+            hearts[0].SetActive(true);
+            hearts[1].SetActive(false);
+            //Destroy(hearts[1]);
         }
         else if (health>=20 && health < 30)
         {
-            Destroy(hearts[2]);
+            hearts[0].SetActive(true);
+            hearts[1].SetActive(true);
+            hearts[2].SetActive(false);
+            //Destroy(hearts[2]);
         }
-        
+        else
+        {
+            hearts[0].SetActive(true);
+            hearts[1].SetActive(true);
+            hearts[2].SetActive(true);
+
+        }
+
+
     }
 }

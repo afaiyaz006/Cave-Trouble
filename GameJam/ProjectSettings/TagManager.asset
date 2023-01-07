@@ -8,6 +8,7 @@ TagManager:
   - player
   - enemy
   - IceCrystal
+  - rolling_enemy
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: instructions
+    uniqueID: 919105421
     locked: 0
   - name: Player
     uniqueID: 641839253
