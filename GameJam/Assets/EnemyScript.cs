@@ -5,20 +5,22 @@ using UnityEngine.SceneManagement;
 public class EnemyScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float enemySpeedLowest = 0.005f;
-    public float enemySpeedHigest = 0.08f;
+    public float enemySpeedLowest = 0.0001f;
+    public float enemySpeedHigest = 0.0007f;
+   
     public AnimationClip animClip;
     private static float enemySpeed;
     public GameObject boom;
-    
+    private float constant_factor = 0.01f;
     void Start()
     {
         enemySpeed = Random.Range(enemySpeedLowest, enemySpeedHigest);
-        
+        gameObject.transform.position += new Vector3(0, 1, 0) * (enemySpeed/ 2)*constant_factor;
+        gameObject.transform.localScale += new Vector3(0, 1, 0) *enemySpeed*constant_factor;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Debug.Log("Enemy Speed is: " + enemySpeed);
         Vector2 enemyPos = transform.position;
@@ -40,7 +42,7 @@ public class EnemyScript : MonoBehaviour
         }
         if (collision.gameObject.name == "player")
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
         if (collision.gameObject.tag == "Wall")
         {

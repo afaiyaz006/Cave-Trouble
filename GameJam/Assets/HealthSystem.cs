@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class HealthSystem : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -9,7 +9,7 @@ public class HealthSystem : MonoBehaviour
     public static int health = 30;
     void Start()
     {
-       
+        health = 30;
     }
 
     // Update is called once per frame
@@ -18,6 +18,7 @@ public class HealthSystem : MonoBehaviour
         if (health>=0 && health < 10)
         {
             Destroy(hearts[0]);
+            SceneManager.LoadScene(3);
         }
         else if (health>=10 && health < 20)
         {
@@ -27,5 +28,6 @@ public class HealthSystem : MonoBehaviour
         {
             Destroy(hearts[2]);
         }
+        
     }
 }

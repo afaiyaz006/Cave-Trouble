@@ -30,6 +30,6 @@ public class ScoreViewer : MonoBehaviour
     // Update is called once per frame
     public  void loadMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

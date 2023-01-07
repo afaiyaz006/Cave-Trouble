@@ -7,7 +7,7 @@ public class IceCrystalSpawner : MonoBehaviour
     // Start is called before the first frame update
     public GameObject[] iceCrystalsPosition;
     public GameObject iceCrystal;
-    public int amount = 5;
+    public int amount = 15;
     void Start()
     {
         for(int i = 1; i <= amount; i++)

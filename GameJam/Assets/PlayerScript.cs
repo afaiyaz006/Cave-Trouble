@@ -13,7 +13,6 @@ public class PlayerScript : MonoBehaviour
     public float fireRate = 0.1f;
     private float nextFire = 0.0f;
     public static float playerXpos;
-    public static int poundedByRock = 0;
     public Animator animator;
     [SerializeField]
     private AudioSource shootAudio;
@@ -46,10 +45,7 @@ public class PlayerScript : MonoBehaviour
             rigidbody2d.AddForce(new Vector2(0, 300.0f));
         }
         playerXpos = transform.position.x;
-        if (poundedByRock == 3)
-        {
-            SceneManager.LoadScene(2);
-        }
+        
     }
     // Update is called once per frame
     void FixedUpdate()

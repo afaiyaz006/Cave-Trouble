@@ -23,6 +23,7 @@ public class EnemySpawnerScript : MonoBehaviour
         {
             for (int i = 1; i <= rate; i++)
             {
+                
                 Instantiate(enemy, transform.position, transform.rotation);
 
             }

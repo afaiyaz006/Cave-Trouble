@@ -12,7 +12,7 @@ public class RockScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector2 rockPosition = transform.position;
         rockPosition.y -= fallSpeed;
@@ -27,7 +27,7 @@ public class RockScript : MonoBehaviour
         if (collision.gameObject.name == "player")
         {
             
-            PlayerScript.poundedByRock += 1;
+            
             HealthSystem.health -= 10;
             Instantiate(crack, transform.position, transform.rotation);
            
